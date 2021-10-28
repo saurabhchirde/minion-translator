@@ -5,7 +5,6 @@ const btntrans = document.querySelector("#btn-translate");
 const divOut = document.querySelector("#output");
 const btnclear = document.querySelector("#btn-clear");
 
-// const serverURL = "https://api.saurabhchirde.repl.co/translate/yoda.json";
 const serverURL = "https://api.funtranslations.com/translate/minion.json";
 
 function TranslationURL(text) {
