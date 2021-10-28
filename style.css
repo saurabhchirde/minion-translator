@@ -57,6 +57,13 @@ div {
   color: black;
   border: rgb(48, 51, 238) dashed;
 }
+footer {
+  color: rgb(177, 178, 243);
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 30px 0 10px 0;
+  text-align: center;
+}
 
 @media screen and (max-width: 800px) {
   #title {
