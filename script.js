@@ -1,14 +1,20 @@
-// 'use strict';
+// "use strict";
 
 const txt = document.querySelector("#txt-input");
 const btntrans = document.querySelector("#btn-translate");
 const divOut = document.querySelector("#output");
 const btnclear = document.querySelector("#btn-clear");
 
-const serverURL = "https://api.saurabhchirde.repl.co/translate/yoda.json";
+// const serverURL = "https://api.saurabhchirde.repl.co/translate/yoda.json";
+const serverURL = "https://api.funtranslations.com/translate/minion.json";
 
 function TranslationURL(text) {
   return serverURL + "?" + "text=" + text;
+}
+
+function errorHandler(error) {
+  console.log("Error occured ", error);
+  alert("Something is wrong with the server, try again later :( ");
 }
 
 btntrans.addEventListener("click", function () {
@@ -16,9 +22,11 @@ btntrans.addEventListener("click", function () {
 
   fetch(TranslationURL(txtInput))
     .then(response => response.json())
-    .then(jsontxt => console.log(jsontxt.contents.translated));
-
-  // divOut.innerText = txt.value;
+    .then(json => {
+      var translatedTxt = json.contents.translated;
+      divOut.innerText = translatedTxt;
+    })
+    .catch(errorHandler);
 });
 
 btnclear.addEventListener("click", function () {
