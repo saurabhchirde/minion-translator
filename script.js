@@ -1,5 +1,3 @@
-// "use strict";
-
 const txt = document.querySelector("#txt-input");
 const btntrans = document.querySelector("#btn-translate");
 const divOut = document.querySelector("#output");
@@ -20,8 +18,8 @@ btntrans.addEventListener("click", function () {
   const txtInput = txt.value;
 
   fetch(TranslationURL(txtInput))
-    .then(response => response.json())
-    .then(json => {
+    .then((response) => response.json())
+    .then((json) => {
       var translatedTxt = json.contents.translated;
       divOut.innerText = translatedTxt;
     })
