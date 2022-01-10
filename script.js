@@ -5,16 +5,16 @@ const btnclear = document.querySelector("#btn-clear");
 
 const serverURL = "https://api.funtranslations.com/translate/minion.json";
 
-function TranslationURL(text) {
+const TranslationURL = (text) => {
   return serverURL + "?" + "text=" + text;
-}
+};
 
-function errorHandler(error) {
+const errorHandler = (error) => {
   console.log("Error occured ", error);
   alert("Something is wrong with the server, try again later :( ");
-}
+};
 
-btntrans.addEventListener("click", function () {
+btntrans.addEventListener("click", () => {
   const txtInput = txt.value;
 
   fetch(TranslationURL(txtInput))
@@ -26,7 +26,7 @@ btntrans.addEventListener("click", function () {
     .catch(errorHandler);
 });
 
-btnclear.addEventListener("click", function () {
+btnclear.addEventListener("click", () => {
   divOut.innerText = "";
   txt.value = "";
 });
